@@ -39,9 +39,10 @@ export const handler = (event, context, callback) => {
   )
     .then((res) => {
       const data = res?.data.sort(compareByScore).reverse()
+      const body = {'data': data}
       return callback(null, {
         statusCode: 200,
-        body: JSON.stringify(data)
+        body: JSON.stringify(body)
       })
     })
     .catch((error) => {
