@@ -8,5 +8,30 @@
   </head>
   <body>
     <p>Leaderboard with Serverless Functions</p>
+    <button id="fetch-btn">Fetch</button>
+    <p id="response-output">Response Placeholder</p>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const fetchBtn = document.getElementById('fetch-btn')
+        const responseText = document.getElementById('response-output')
+
+        fetchBtn.addEventListener('click', async () => {
+          const response = await fetch('/.netlify/functions/getAll', {
+            /*body:JSON.stringify({
+              playerName: 'ana',
+              playerScore: 80,
+              playerTime: '01:50:29.002'
+            }),
+            method: 'POST'*/
+            method: 'GET'
+          }).then(
+            response => response.json()
+          )
+
+          responseText.innerText = JSON.stringify(response)
+        })
+      })
+    </script>
   </body>
 </html>
