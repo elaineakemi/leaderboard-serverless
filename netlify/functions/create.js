@@ -3,7 +3,7 @@ import faunadb from 'faunadb'
 /* configure faunaDB Client with our secret */
 const query = faunadb.query
 const client = new faunadb.Client({
-  secret: process.env.FAUNADB_SECRET
+  secret: process.env.FAUNADB
 })
 
 export const handler = (event, context, callback) => {

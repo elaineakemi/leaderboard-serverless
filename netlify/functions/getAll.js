@@ -2,7 +2,7 @@ import faunadb from 'faunadb'
 
 const query = faunadb.query
 const client = new faunadb.Client({
-  secret: process.env.FAUNADB_SECRET
+  secret: process.env.FAUNADB
 })
 
 const compareByScore = (a, b) => {
