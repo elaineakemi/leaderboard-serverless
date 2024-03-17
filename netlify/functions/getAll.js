@@ -6,10 +6,10 @@ const client = new faunadb.Client({
 })
 
 const compareByScore = (a, b) => {
-  if (a.playerScore < b.playerScore) {
+  if (parseInt(a.playerScore) < parseInt(b.playerScore)) {
     return -1
   }
-  if (a.playerScore > b.playerScore) {
+  if (parseInt(a.playerScore) > parseInt(b.playerScore)) {
     return 1
   }
   return 0
