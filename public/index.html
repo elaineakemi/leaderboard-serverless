@@ -18,12 +18,6 @@
 
         fetchBtn.addEventListener('click', async () => {
           const response = await fetch('/.netlify/functions/getAll', {
-            /*body:JSON.stringify({
-              playerName: 'ana',
-              playerScore: 80,
-              playerTime: '01:50:29.002'
-            }),
-            method: 'POST'*/
             method: 'GET'
           }).then(
             response => response.json()

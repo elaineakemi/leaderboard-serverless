@@ -38,7 +38,7 @@ export const handler = (event, context, callback) => {
 
   )
     .then((res) => {
-      const data = res?.data.sort(compareByScore).reverse()
+      const data = res?.data.sort(compareByScore).reverse().slice(0,10)
       const body = {'data': data}
       return callback(null, {
         statusCode: 200,
